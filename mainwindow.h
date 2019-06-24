@@ -9,10 +9,13 @@
 #include <QPrintDialog>
 #include <iostream>
 #include <QString>
+#include <math.h>
 
 //My helping global varibale
 extern QByteArray line;
 extern QList<QByteArray> lines;
+extern int hardcord[5][8];
+extern int max_num;
 
 namespace Ui {
 class MainWindow;
