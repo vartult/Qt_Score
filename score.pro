@@ -5,6 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT += printsupport
+INCLUDEPATH += /home/vartul/qt project/score
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

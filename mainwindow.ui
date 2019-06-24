@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>945</width>
-    <height>600</height>
+    <height>621</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -48,7 +48,7 @@
      <rect>
       <x>30</x>
       <y>20</y>
-      <width>411</width>
+      <width>421</width>
       <height>221</height>
      </rect>
     </property>
@@ -206,9 +206,9 @@
    <widget class="QWidget" name="gridLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>490</x>
       <y>20</y>
-      <width>411</width>
+      <width>431</width>
       <height>221</height>
      </rect>
     </property>
@@ -316,115 +316,115 @@
      <rect>
       <x>30</x>
       <y>270</y>
-      <width>411</width>
+      <width>421</width>
       <height>221</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_4">
-     <item row="0" column="6">
-      <widget class="QLCDNumber" name="lcd07_4"/>
-     </item>
-     <item row="2" column="7">
-      <widget class="QLCDNumber" name="lcd28_4"/>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLCDNumber" name="lcd21_2"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLCDNumber" name="lcd10_4"/>
-     </item>
-     <item row="2" column="3">
-      <widget class="QLCDNumber" name="lcd24_4"/>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLCDNumber" name="lcd01_4"/>
-     </item>
-     <item row="1" column="7">
-      <widget class="QLCDNumber" name="lcd18_4"/>
-     </item>
-     <item row="2" column="2">
-      <widget class="QLCDNumber" name="lcd23_4"/>
-     </item>
-     <item row="1" column="3">
-      <widget class="QLCDNumber" name="lcd14_4"/>
-     </item>
-     <item row="0" column="5">
-      <widget class="QLCDNumber" name="lcd06_4"/>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLCDNumber" name="lcd00_4"/>
+     <item row="2" column="4">
+      <widget class="QLCDNumber" name="lcd25_4"/>
      </item>
      <item row="0" column="7">
       <widget class="QLCDNumber" name="lcd08_4"/>
      </item>
-     <item row="2" column="6">
-      <widget class="QLCDNumber" name="lcd27_4"/>
+     <item row="1" column="7">
+      <widget class="QLCDNumber" name="lcd18_4"/>
      </item>
-     <item row="1" column="6">
-      <widget class="QLCDNumber" name="lcd17_4"/>
-     </item>
-     <item row="0" column="2">
-      <widget class="QLCDNumber" name="lcd03_4"/>
-     </item>
-     <item row="2" column="5">
-      <widget class="QLCDNumber" name="lcd26_4"/>
-     </item>
-     <item row="1" column="4">
-      <widget class="QLCDNumber" name="lcd15_4"/>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLCDNumber" name="lcd22_4"/>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLCDNumber" name="lcd11_4"/>
-     </item>
-     <item row="2" column="4">
-      <widget class="QLCDNumber" name="lcd25_4"/>
+     <item row="0" column="0">
+      <widget class="QLCDNumber" name="lcd00_4"/>
      </item>
      <item row="1" column="5">
       <widget class="QLCDNumber" name="lcd16_4"/>
      </item>
+     <item row="3" column="5">
+      <widget class="QLCDNumber" name="lcd36_4"/>
+     </item>
+     <item row="0" column="5">
+      <widget class="QLCDNumber" name="lcd06_4"/>
+     </item>
+     <item row="2" column="7">
+      <widget class="QLCDNumber" name="lcd28_4"/>
+     </item>
      <item row="1" column="2">
       <widget class="QLCDNumber" name="lcd12_4"/>
+     </item>
+     <item row="1" column="6">
+      <widget class="QLCDNumber" name="lcd17_4"/>
+     </item>
+     <item row="0" column="6">
+      <widget class="QLCDNumber" name="lcd07_4"/>
+     </item>
+     <item row="2" column="5">
+      <widget class="QLCDNumber" name="lcd26_4"/>
      </item>
      <item row="0" column="3">
       <widget class="QLCDNumber" name="lcd04_4"/>
      </item>
-     <item row="0" column="4">
-      <widget class="QLCDNumber" name="lcd05_4"/>
-     </item>
-     <item row="3" column="2">
-      <widget class="QLCDNumber" name="lcd33_4"/>
-     </item>
      <item row="3" column="3">
       <widget class="QLCDNumber" name="lcd34_4"/>
+     </item>
+     <item row="1" column="4">
+      <widget class="QLCDNumber" name="lcd15_4"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLCDNumber" name="lcd10_4"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLCDNumber" name="lcd21_2"/>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLCDNumber" name="lcd23_4"/>
+     </item>
+     <item row="2" column="6">
+      <widget class="QLCDNumber" name="lcd27_4"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLCDNumber" name="lcd22_4"/>
+     </item>
+     <item row="0" column="4">
+      <widget class="QLCDNumber" name="lcd05_4"/>
      </item>
      <item row="3" column="4">
       <widget class="QLCDNumber" name="lcd35_4"/>
      </item>
-     <item row="3" column="5">
-      <widget class="QLCDNumber" name="lcd36_4"/>
+     <item row="3" column="0">
+      <widget class="QLCDNumber" name="lcd31_4"/>
      </item>
-     <item row="3" column="6">
-      <widget class="QLCDNumber" name="lcd37_4"/>
+     <item row="3" column="2">
+      <widget class="QLCDNumber" name="lcd33_4"/>
      </item>
      <item row="3" column="7">
       <widget class="QLCDNumber" name="lcd38_4"/>
      </item>
-     <item row="3" column="0">
-      <widget class="QLCDNumber" name="lcd31_4"/>
+     <item row="3" column="6">
+      <widget class="QLCDNumber" name="lcd37_4"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLCDNumber" name="lcd11_4"/>
      </item>
      <item row="3" column="1">
       <widget class="QLCDNumber" name="lcd32_4"/>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLCDNumber" name="lcd01_4"/>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLCDNumber" name="lcd14_4"/>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLCDNumber" name="lcd03_4"/>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLCDNumber" name="lcd24_4"/>
      </item>
     </layout>
    </widget>
    <widget class="QWidget" name="gridLayoutWidget_4">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>490</x>
       <y>270</y>
-      <width>411</width>
+      <width>431</width>
       <height>221</height>
      </rect>
     </property>
@@ -527,6 +527,16 @@
      </item>
     </layout>
    </widget>
+   <widget class="QTextEdit" name="test">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>530</y>
+      <width>104</width>
+      <height>70</height>
+     </rect>
+    </property>
+   </widget>
    <zorder>Result</zorder>
    <zorder>Button</zorder>
    <zorder>gridLayoutWidget</zorder>
@@ -537,6 +547,7 @@
    <zorder>gridLayoutWidget_2</zorder>
    <zorder>gridLayoutWidget_3</zorder>
    <zorder>gridLayoutWidget_4</zorder>
+   <zorder>test</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
