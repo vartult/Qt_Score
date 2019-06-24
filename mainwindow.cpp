@@ -105,32 +105,84 @@ void MainWindow::on_Button_released()
 
         }
 
-        QMessageBox::warning(this,"INFORMATION","FINDDING MAX UPDAING VALUES ON THAT BEHALF");
-        //find max
-        for(int i=1;i<5;i++)
-        {
-            for(int j=0;j<8;j++)
-            {
-                if(hardcord[i][j]>max_num){
-                    max_num=hardcord[i][j];
-                }
-            }
-        }
-
-        for(int i=1;i<5;i++)
-        {
-            for(int j=0;j<8;j++)
-            {
-                if(hardcord[i][j]<max_num){
-                    hardcord[i][j]=0;
-                }
-            }
-        }
-
 
 }
 
 void MainWindow::on_Button_pressed()
 {
+
+}
+
+void MainWindow::on_res_released()
+{
+    QMessageBox::warning(this,"INFORMATION","FINDING MAX UPDAING VALUES ON THAT BEHALF");
+    //find max
+    for(int i=1;i<5;i++)
+    {
+        for(int j=0;j<8;j++)
+        {
+            if(hardcord[i][j]>max_num){
+                max_num=hardcord[i][j];
+            }
+        }
+    }
+    max_num=max_num*0.45;
+    for(int i=1;i<5;i++)
+    {
+        for(int j=0;j<8;j++)
+        {
+            if(hardcord[i][j]<max_num){
+                hardcord[i][j]=0;
+            }
+        }
+    }
+
+    ui->lcd00->display(hardcord[1][0]);
+    ui->lcd01->display(hardcord[1][1]);
+    ui->lcd03->display(hardcord[1][2]);
+    ui->lcd04->display(hardcord[1][3]);
+    ui->lcd05->display(hardcord[1][4]);
+    ui->lcd06->display(hardcord[1][5]);
+    ui->lcd07->display(hardcord[1][6]);
+    ui->lcd08->display(hardcord[1][7]);
+    ui->lcd10->display(hardcord[2][0]);
+    ui->lcd11->display(hardcord[2][1]);
+    ui->lcd12->display(hardcord[2][2]);
+    ui->lcd14->display(hardcord[2][3]);
+    ui->lcd15->display(hardcord[2][4]);
+    ui->lcd16->display(hardcord[2][5]);
+    ui->lcd17->display(hardcord[2][6]);
+    ui->lcd18->display(hardcord[2][7]);
+    ui->lcd21->display(hardcord[3][0]);
+    ui->lcd22->display(hardcord[3][1]);
+    ui->lcd23->display(hardcord[3][2]);
+    ui->lcd24->display(hardcord[3][3]);
+    ui->lcd25->display(hardcord[3][4]);
+    ui->lcd26->display(hardcord[3][5]);
+    ui->lcd27->display(hardcord[3][6]);
+    ui->lcd28->display(hardcord[3][7]);
+    ui->lcd31->display(hardcord[4][0]);
+    ui->lcd32->display(hardcord[4][1]);
+    ui->lcd33->display(hardcord[4][2]);
+    ui->lcd34->display(hardcord[4][3]);
+    ui->lcd35->display(hardcord[4][4]);
+    ui->lcd36->display(hardcord[4][5]);
+    ui->lcd37->display(hardcord[4][6]);
+    ui->lcd38->display(hardcord[4][7]);
+
+    int temp_num=0,temp_deno=0;
+    for(int i=1;i<5;i++)
+    {
+        for(int j=0;j<8;j++)
+        {
+            if(hardcord[i][j]>0){
+                temp_num+=hardcord[i][j]*hardcord[0][j];
+                temp_deno+=hardcord[0][j];
+            }
+        }
+    }
+
+    int resultant=temp_num/temp_deno;
+    ui->Result->display(resultant);
 
 }

@@ -38,6 +38,8 @@ private slots:
 
     void on_Button_released();
 
+    void on_res_released();
+
 private:
     Ui::MainWindow *ui;
 };

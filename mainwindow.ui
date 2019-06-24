@@ -537,6 +537,19 @@
      </rect>
     </property>
    </widget>
+   <widget class="QPushButton" name="res">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>524</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Result</string>
+    </property>
+   </widget>
    <zorder>Result</zorder>
    <zorder>Button</zorder>
    <zorder>gridLayoutWidget</zorder>
@@ -548,6 +561,7 @@
    <zorder>gridLayoutWidget_3</zorder>
    <zorder>gridLayoutWidget_4</zorder>
    <zorder>test</zorder>
+   <zorder>res</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
