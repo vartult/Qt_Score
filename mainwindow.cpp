@@ -17,7 +17,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    //ui->lcd00->autoFillBackground();
+    //ui->lcd00->setPalette(Qt::green);
     on_Button_clicked();
 
 
