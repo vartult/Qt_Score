@@ -61,7 +61,6 @@ void MainWindow::on_Button_released()
     }
     int count=0;
         while (!file.atEnd()) {
-            count++;
             line= file.readLine();
             lines = line.split(',');
             for(int i=0;i<lines.size();i++)
@@ -71,9 +70,7 @@ void MainWindow::on_Button_released()
                 //ui->Result->display();
             }
 if(y=='1'){
-    //ui->lcd00->display(hardcord[1][0]);
-    ui->lcd00->display('a');
-
+    ui->lcd00->display(hardcord[1][0]);
     ui->lcd01->display(hardcord[1][1]);
     ui->lcd03->display(hardcord[1][2]);
     ui->lcd04->display(hardcord[1][3]);
