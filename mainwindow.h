@@ -15,8 +15,11 @@
 //My helping global varibale
 extern QByteArray line;
 //extern QList<QByteArray> lines;
-extern int hardcord[5][8];
-extern int digits[5][13];
+extern int hor_weight[8];
+
+extern int ver_weight[4];
+
+extern int digits[5][8];
 extern int max_num;
 extern QString lines;
 extern char x;
