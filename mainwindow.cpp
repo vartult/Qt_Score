@@ -315,6 +315,18 @@ void MainWindow::on_res_released()
             }
         }
     }
+    //50mV filtering
+    for(int i=1;i<5;i++)
+    {
+        for(int j=0;j<8;j++)
+        {
+            if(digits[i][j]<2.55){
+                digits[i][j]=0;
+            }
+        }
+    }
+
+    //max*.45 value filtering
     double temp = max_num*0.45;
     qDebug() << temp;
     for(int i=1;i<5;i++)
