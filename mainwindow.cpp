@@ -2,7 +2,8 @@
 #include "ui_mainwindow.h"
 
 QByteArray line="";
-QList<QByteArray> lines;
+QString lines="";
+//QList<QByteArray> lines;
 int hardcord[5][8]={
                     {-45,-30,-18,-6,6,18,30,45},
                     {16,26,22,19,29,35,6,7},
@@ -60,20 +61,107 @@ void MainWindow::on_Button_released()
         return;
     }
     int count=0;
-        while (!file.atEnd()) {
-            count++;
-            line= file.readLine();
-            lines = line.split(',');
-            for(int i=0;i<lines.size();i++)
-            {
-                //QMessageBox::warning(this,"data",lines[i]);
-                //QMessageBox::warning(this,"data",QString(c));
-                //ui->Result->display();
-            }
-if(y=='1'){
-    //ui->lcd00->display(hardcord[1][0]);
-    ui->lcd00->display('a');
 
+    QTextStream in(&file);
+    QStringList fields;
+    while(!in.atEnd()) {
+        count++;
+        QString line = in.readLine();
+        fields = line.split(",");
+        for(int i=0;i<fields.size();i++)
+        {
+            int deci=0;
+            if(fields[i][0]=='0')
+                deci+=0*16;
+            else if(fields[i][0]=='1')
+                deci+=1*16;
+            else if(fields[i][0]=='2')
+                deci+=2*16;
+            else if(fields[i][0]=='3')
+                deci+=3*16;
+            else if(fields[i][0]=='4')
+                deci+=4*16;
+            else if(fields[i][0]=='5')
+                deci+=5*16;
+            else if(fields[i][0]=='6')
+                deci+=6*16;
+            else if(fields[i][0]=='7')
+                deci+=7*16;
+            else if(fields[i][0]=='8')
+                deci+=8*16;
+            else if(fields[i][0]=='9')
+                deci+=9*16;
+            else if(fields[i][0]=='a')
+                deci+=10*16;
+            else if(fields[i][0]=='b')
+                deci+=11*16;
+            else if(fields[i][0]=='c')
+                deci+=12*16;
+            else if(fields[i][0]=='d')
+                deci+=13*16;
+            else if(fields[i][0]=='e')
+                deci+=14*16;
+            else
+                deci+=15*16;
+
+            if(fields[i][1]=='0')
+                deci+=0;
+            else if(fields[i][1]=='1')
+                deci+=1;
+            else if(fields[i][1]=='2')
+                deci+=2;
+            else if(fields[i][1]=='3')
+                deci+=3;
+            else if(fields[i][1]=='4')
+                deci+=4;
+            else if(fields[i][1]=='5')
+                deci+=5;
+            else if(fields[i][1]=='6')
+                deci+=6;
+            else if(fields[i][1]=='7')
+                deci+=7;
+            else if(fields[i][1]=='8')
+                deci+=8;
+            else if(fields[i][1]=='9')
+                deci+=9;
+            else if(fields[i][1]=='a')
+                deci+=10;
+            else if(fields[i][1]=='b')
+                deci+=11;
+            else if(fields[i][1]=='c')
+                deci+=12;
+            else if(fields[i][1]=='d')
+                deci+=13;
+            else if(fields[i][1]=='e')
+                deci+=14;
+            else
+                deci+=15;
+            qDebug() << "Amount" << fields[i]   <<" "<<deci;
+
+        }
+    }
+
+
+
+//    for(int i=0;fields.size();i++)
+//    {
+//        QMessageBox::warning(this,"data",fields[i]);
+//    }
+
+
+
+
+//        while (!file.atEnd()) {
+//            lines= file.readLine();
+//            lines.split(',');
+//            for(int i=0;i<lines.count();i++)
+//            {
+//                QMessageBox::warning(this,"data",qUtf8Printable(lines));
+//                //QMessageBox::warning(this,"data",QString(c));
+//                //ui->Result->display();
+//            }
+if(y=='1'||y=='o'){
+    ui->lcd00->display(hardcord[1][0]);
     ui->lcd01->display(hardcord[1][1]);
     ui->lcd03->display(hardcord[1][2]);
     ui->lcd04->display(hardcord[1][3]);
@@ -214,7 +302,7 @@ if(y=='4'){
 
 
 
-        }
+
 
 
 }

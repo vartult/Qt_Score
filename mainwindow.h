@@ -10,12 +10,14 @@
 #include <iostream>
 #include <QString>
 #include <math.h>
+#include <QDebug>
 
 //My helping global varibale
 extern QByteArray line;
-extern QList<QByteArray> lines;
+//extern QList<QByteArray> lines;
 extern int hardcord[5][8];
 extern int max_num;
+extern QString lines;
 
 namespace Ui {
 class MainWindow;
