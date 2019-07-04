@@ -326,6 +326,21 @@ void MainWindow::on_res_released()
             }
         }
     }
+    //Check for value going to other channels(extreme cases)
+    bool left=0,right=0;
+    for(int i=1;i<=4;i++)
+    {
+        if(digits[i][0]>0)
+        {
+            left=1; break;
+        }
+        if(digits[i][7]>0)
+        {
+            right=1; break;
+        }
+    }
+
+
 
     QChar y=filename[filename.size()-1-4];
 
@@ -489,5 +504,11 @@ void MainWindow::on_res_released()
     qDebug()<<tempo_num<<tempo_deno<<resultant_ver<<resultant;
     ui->horizontal->display(resultant);
     ui->vertical->display(resultant_ver);
+
+    if(left==1||right==1)
+    {
+
+        QMessageBox::warning(this, "Warning", "Corner values delected, Need to check other channels also");
+    }
 
 }
