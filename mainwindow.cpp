@@ -1,14 +1,17 @@
+//*******************************
+//*******Vartul Tripathi*********
+//*******************************
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
 QByteArray line="";
 QString lines="";
-//QList<QByteArray> lines;
-int hor_weight[8]={
-                    -45,-30,-18,-6,6,18,30,45
-
-                   };
+//Horizontal Weights
+int hor_weight[8]={ -45,-30,-18,-6,6,18,30,45 };
+//Vertical Weights
 int ver_weight[4]={-5,5,15,25};
+
+//To store the data coming from file
 int digits[5][8]={0};
 int max_num=INT_MIN;
 char x;
@@ -18,11 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //ui->lcd00->autoFillBackground();
-    //ui->lcd00->setPalette(Qt::green);
     on_Button_clicked();
-
-
 }
 
 MainWindow::~MainWindow()
@@ -33,9 +32,6 @@ MainWindow::~MainWindow()
 void MainWindow::on_Button_clicked()
 {
 
-    //ui->Result->display(4);
-        //File Handling for data over server
-
 }
 
 void MainWindow::on_lcd00_overflow()
@@ -45,6 +41,7 @@ void MainWindow::on_lcd00_overflow()
 
 void MainWindow::on_Button_released()
 {
+    //File Handling
     //ui->Result->display(4);
     filename=QFileDialog::getOpenFileName(this,
                                                   tr("OPEN FILE"),
@@ -55,7 +52,7 @@ void MainWindow::on_Button_released()
     s.append(y);
     ui->test->setText(s);
     QFile file(filename);
-
+    //Checking if file opened successfully
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
         QMessageBox::warning(this, "Warning", "Cannot open file: " + file.errorString());
         return;
@@ -64,6 +61,8 @@ void MainWindow::on_Button_released()
 
     QTextStream in(&file);
     QStringList fields;
+    //Converting Hexadecimal no to Decimal no by just comparing the value in QByte array
+    //Index at 0 and 1 are compared and 16^x is multiplied.
     while(!in.atEnd()) {
         count++;
         QString line = in.readLine();
@@ -154,7 +153,7 @@ void MainWindow::on_Button_released()
         }
     }
 
-
+//Display data on the Channel 1
 if(y=='1'||y=='o'){
     ui->lcd00->display(digits[1][0]);
     ui->lcd01->display(digits[1][1]);
@@ -190,6 +189,7 @@ if(y=='1'||y=='o'){
     ui->lcd38->display(digits[4][7]);
 }
 
+//Display data on the Channel 2
 if(y=='2'){
     ui->lcd00_3->display(digits[1][0]);
     ui->lcd01_3->display(digits[1][1]);
@@ -225,6 +225,7 @@ if(y=='2'){
     ui->lcd38_3->display(digits[4][7]);
 }
 
+//Display data on the Channel 3
 if(y=='3'){
     ui->lcd00_4->display(digits[1][0]);
     ui->lcd01_4->display(digits[1][1]);
@@ -259,6 +260,7 @@ if(y=='3'){
     ui->lcd37_4->display(digits[4][6]);
     ui->lcd38_4->display(digits[4][7]);
 }
+//Display data on the Channel 4
 
 if(y=='4'){
     ui->lcd00_5->display(digits[1][0]);
@@ -304,8 +306,8 @@ void MainWindow::on_Button_pressed()
 
 void MainWindow::on_res_released()
 {
+    //Finding Max out of data for the second filtering process.
     QMessageBox::warning(this,"INFORMATION","PROCESSING");
-    //find max
     for(int i=1;i<5;i++)
     {
         for(int j=0;j<8;j++)
@@ -315,7 +317,7 @@ void MainWindow::on_res_released()
             }
         }
     }
-    //50mV filtering
+    //50mV filtering(1st Filtering)
     for(int i=1;i<5;i++)
     {
         for(int j=0;j<8;j++)
@@ -326,7 +328,7 @@ void MainWindow::on_res_released()
         }
     }
 
-    //max*.45 value filtering
+    //max*.45 value filtering(2nd Filtering)
     double temp = max_num*0.45;
     qDebug() << temp;
     for(int i=1;i<5;i++)
@@ -353,9 +355,10 @@ void MainWindow::on_res_released()
     }
 
 
-
+    //Setting Updated Data
     QChar y=filename[filename.size()-1-4];
 
+    //Setting Updated Data on channel 1
     if(y=='1'||y=='o'){
         ui->lcd00->display(digits[1][0]);
         ui->lcd01->display(digits[1][1]);
@@ -390,7 +393,7 @@ void MainWindow::on_res_released()
         ui->lcd37->display(digits[4][6]);
         ui->lcd38->display(digits[4][7]);
     }
-
+    //Setting Updated Data on channel 2
     if(y=='2'){
         ui->lcd00_3->display(digits[1][0]);
         ui->lcd01_3->display(digits[1][1]);
@@ -425,7 +428,7 @@ void MainWindow::on_res_released()
         ui->lcd37_3->display(digits[4][6]);
         ui->lcd38_3->display(digits[4][7]);
     }
-
+    //Setting Updated Data on channel 3
     if(y=='3'){
         ui->lcd00_4->display(digits[1][0]);
         ui->lcd01_4->display(digits[1][1]);
@@ -460,7 +463,7 @@ void MainWindow::on_res_released()
         ui->lcd37_4->display(digits[4][6]);
         ui->lcd38_4->display(digits[4][7]);
     }
-
+    //Setting Updated Data on channel 4
     if(y=='4'){
         ui->lcd00_5->display(digits[1][0]);
         ui->lcd01_5->display(digits[1][1]);
@@ -496,6 +499,10 @@ void MainWindow::on_res_released()
         ui->lcd38_5->display(digits[4][7]);
     }
 
+//    *************Calculating Horizontal and verical angle****************
+//    *************value=((sigma)(v[i]*w[i]))/(sigma)(v[i])****************
+//    *********************************************************************
+
     int temp_num=0,temp_deno=0;
     int tempo_num=0,tempo_deno=0;
     for(int i=1;i<5;i++)
@@ -514,9 +521,13 @@ void MainWindow::on_res_released()
     double resultant=(double)temp_num/(double)temp_deno;
     double resultant_ver=(double)tempo_num/(double)tempo_deno;
     qDebug()<<tempo_num<<tempo_deno<<resultant_ver<<resultant;
+
+    //Coordinates
     ui->horizontal->display(resultant);
     ui->vertical->display(resultant_ver);
 
+    //In case data in corner of array
+    //have to check other arrays for active values
     if(left==1||right==1)
     {
 
